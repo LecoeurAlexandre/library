@@ -1,5 +1,33 @@
+import {NavBar} from "../../components/NavBar";
+
 export function HomeScreen () {
     return (
-        <h1>Ca marche</h1>
+        <>
+            <NavBar/>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            <h2>ça marche</h2>
+            
+
+        </>
     )
 }
