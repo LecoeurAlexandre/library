@@ -1,0 +1,49 @@
+#footerContainer {
+    background-color: white;
+    width: 100%;
+    float: right;
+    height: 140px;
+    position: static;
+    bottom: 0;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#footerList {
+    list-style: none;
+}
+
+#footerList a {
+    text-decoration: none;
+    color: black;
+}
+
+#footerList a:hover{
+    text-decoration:underline;
+}
+
+#verticalLineFooter {
+    height: 100px;
+    border-left: 2px solid black;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#socialTitle {
+    font-size: 17px;
+}
+
+#divRightFooter img {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+#divRightFooter img:hover {
+    transform: scale(120%);
+    transition: 0.2s;
+}

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: customFont;
+  src: url("../../../public/PoiretOne-Regular.ttf");
+}
+
 #topBar {
     height: 80px;
     width: 100%;
@@ -11,18 +16,20 @@
 }
 
 #appTitle {
+    font-family: customFont;
     margin-left: 15px;
     margin-right: 15px;
     font-size: 55px;
+    font-weight: 500;
     -webkit-animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
             animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     
 }
 
 #topBarLine {
-    border: 2px solid black;
-    height: 2px;
-    width: 65%;
+    border: 1px solid black;
+    height: 1px;
+    width: 49%;
     -webkit-animation: slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             animation: slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
