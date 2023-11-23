@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import "./LoginScreen"
+import "./LoginScreen.css"
 
 export function LoginScreen () {
 
@@ -12,7 +12,7 @@ export function LoginScreen () {
             <br /> <br />
             <div className='row justify-content-center mt-5'>
                 <div className='col-md-8 mt-5'>
-                    <div className='card margin-card mt-5'>
+                    <div className='card margin-card mt-5' id='loginScreen-shadow'>
                         <div className='card-body'>
                             <div className='row'>
                             <div className="col-lg-4">
