@@ -1,0 +1,9 @@
+#registerScreen-main-container {
+    
+    background-color: aquamarine;
+}
+
+.test {
+    position: relative !important;
+    z-index: 0;
+}
