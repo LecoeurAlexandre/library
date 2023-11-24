@@ -8,6 +8,12 @@ export function RegisterScreen () {
     const [birthdate, setBirthdate] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    function handleRegistrationForm(e) {
+        e.preventDefault();
+        const register = {firstname, lastname, birthdate, email, password}
+        console.log(e)
+    }
     
 
     return (
@@ -27,7 +33,7 @@ export function RegisterScreen () {
                             </div>
 
                             <div className='card-body'>
-                                <form class="needs-validation" novalidate>
+                                <form className="needs-validation" noValidate>
 
                                     <div className='row mb-3'>
                                         <label className='col-md-3 control-label'> Prénom </label>
@@ -103,11 +109,11 @@ export function RegisterScreen () {
                                             >
                                             </input>
                                         </div>
-                                        <div class="valid-feedback"> Please provide a valid zip. </div>
+                                        <div className="valid-feedback"> Please provide a valid zip. </div>
                                     </div>
 
                                     <div className='form-group mb-3'>
-                                        <button className='btn btn-success btn-lg btn-block block-center col-lg-12' onClick={ (e) => handleRegisterForm(e)}>Inscription</button>
+                                        <button className='btn btn-success btn-lg btn-block block-center col-lg-12' onClick={ (e) => handleRegistrationForm(e)}>Inscription</button>
                                     </div>
                                     <div>
                                         <Link to="/login">Déjà un compte ? Cliquez ici pour vous connecter</Link>
