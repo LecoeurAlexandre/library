@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
-import { handleForm } from './LoginScreenHttpHandle'
 import {signIn} from "../../authSlice"
 import "./LoginScreen.css"
 
@@ -9,21 +8,30 @@ export function LoginScreen () {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const isLogged = useSelector(state => state.authSlice.isLogged)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const test = (e) => {
+    const handleForm = (e) => {
         e.preventDefault();
 
         var credentials = { email: email, password: password };
 
         const onSigningHandler = async (credentials) => {
-            dispatch(signIn(credentials)) 
+
+            dispatch(signIn(credentials)).then((data) => {
+
+                if(data.type == "auth/login/fulfilled") {
+                    navigate("/")
+                }
+                else if(data.type == "auth/login/rejected") {
+                    document.getElementById("invalidMessage").style.display = "inline"
+                }
+            })
         }
 
         onSigningHandler(credentials)
 
-        navigate("/")
     }
 
     return (
@@ -77,11 +85,11 @@ export function LoginScreen () {
                                             >
                                             </input>
                                         </div>
-                                        <div className="valid-feedback"> Please provide a valid zip. </div>
+                                        <span id="invalidMessage" className="form-text"><img src="./exclamation-circle.svg" className="me-2" id="invalidIcon"/>Adresse mail ou mot de passe incorrect. Veuillez réessayer</span>
                                     </div>
 
                                     <div className='form-group mb-3'>
-                                        <button className='btn btn-success btn-lg btn-block block-center col-lg-12' onClick={ (e) => test(e)} type="submit">Continuer</button>
+                                        <button className='btn btn-success btn-lg btn-block block-center col-lg-12' onClick={ (e) => handleForm(e)} type="submit">Continuer</button>
                                     </div>
                                     <div>
                                         <Link to="/register">Pas de compte ? Cliquez ici</Link>

@@ -7,6 +7,11 @@ import { LoginScreen } from './screens/loginScreen/LoginScreen';
 import { RegisterScreen } from './screens/registerScreen/RegisterScreen';
  
 function App() {
+
+
+
+
+
   return ( 
     <BrowserRouter>
       <Routes>

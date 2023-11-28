@@ -1,4 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { useNavigate } from "react-router-dom";
+
+
 
 export const signIn = createAsyncThunk(
   "auth/login",
@@ -49,7 +52,7 @@ export const signUp = createAsyncThunk(
 const authSlice = createSlice({
   name: "auth",
   initialState: {
-    isLogged : true,
+    isLogged : false,
     isLoading: false,
     error: null
   },
@@ -70,10 +73,10 @@ const authSlice = createSlice({
 
     builder.addCase(signIn.rejected, (state, action) => {
       state.isLoading = false
-      // state.error = action.payload
-      // console.error("Identifiants inconnus")
-      state.error = action.error.message  // Use action.error.message to get the error message
-      console.error("Erreur HTTP:", action.error.message);
+      state.error = true
+      console.error("Identifiants inconnus")
+      // state.error = action.error.message  
+      // console.error("Erreur HTTP:", action.error.message);
     })
 
     builder.addCase(signIn.fulfilled, (state, action) => {
