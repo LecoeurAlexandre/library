@@ -1,11 +1,30 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux"
+import { handleForm } from './LoginScreenHttpHandle'
+import {signIn} from "../../authSlice"
 import "./LoginScreen.css"
 
 export function LoginScreen () {
 
-    const [username, setUsername] = useState('')
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const test = (e) => {
+        e.preventDefault();
+
+        var credentials = { email: email, password: password };
+
+        const onSigningHandler = async (credentials) => {
+            dispatch(signIn(credentials)) 
+        }
+
+        onSigningHandler(credentials)
+
+        navigate("/")
+    }
 
     return (
         <div className='container'>
@@ -16,7 +35,7 @@ export function LoginScreen () {
                         <div className='card-body'>
                             <div className='row'>
                             <div className="col-lg-4">
-                            <img className="img-fluid" src="https://static.vecteezy.com/ti/vecteur-libre/p3/2507570-lecteur-homme-livre-de-lecture-debout-avec-pile-livres-et-feuilles-gratuit-vectoriel.jpg"></img>
+                            <img className="img-fluid" src="../../public/loginImage.jpg"></img>
                         </div>
                         <div className="col-lg-8">
                             <div className='card-header text-center'>
@@ -24,18 +43,19 @@ export function LoginScreen () {
                             </div>
 
                             <div className='card-body'>
-                                <form class="needs-validation" novalidate>
+                                <form className="needs-validation" id="loginForm" noValidate>
 
                                     <div className='row mb-3'>
                                         <label className='col-md-3 control-label'> Email</label>
                                         <div className='col-md-9'>
                                             <input
-                                                type='text'
+                                                type='email'
                                                 name='username'
                                                 className='form-control'
                                                 placeholder='Entrer votre email'
-                                                value={username}
-                                                onChange={ (e) => setUsername(e.target.value)}
+                                                id="emailInput"
+                                                value={email}
+                                                onChange={ (e) => setEmail(e.target.value)}
                                                 required
                                             >
                                             </input>
@@ -50,17 +70,18 @@ export function LoginScreen () {
                                                 name='password'
                                                 className='form-control'
                                                 placeholder='Entrer votre mot de passe'
+                                                id="passwordInput"
                                                 value={password}
                                                 onChange={ (e) => setPassword(e.target.value)}
                                                 required
                                             >
                                             </input>
                                         </div>
-                                        <div class="valid-feedback"> Please provide a valid zip. </div>
+                                        <div className="valid-feedback"> Please provide a valid zip. </div>
                                     </div>
 
                                     <div className='form-group mb-3'>
-                                        <button className='btn btn-success btn-lg btn-block block-center col-lg-12' onClick={ (e) => handleLoginForm(e)}>Continuer</button>
+                                        <button className='btn btn-success btn-lg btn-block block-center col-lg-12' onClick={ (e) => test(e)} type="submit">Continuer</button>
                                     </div>
                                     <div>
                                         <Link to="/register">Pas de compte ? Cliquez ici</Link>
