@@ -1,0 +1,102 @@
+#booklist-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+#booklist-h2 {
+    margin-top: 3.5em;
+}
+
+#booklist-cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;   
+}
+
+#booklist-card {
+    display: flex;
+    height: 17em;
+    width: 35vw;
+    margin-bottom: 1em;
+}
+
+#booklist-card-img {
+    max-height: 17em;
+    border-radius: 20px;
+}
+
+#booklist-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#booklist-card-title {
+    background-color: #323332;
+    color: antiquewhite;
+    font-size: medium;
+    text-align: justify;
+    padding : 0.3em;
+    margin: 0;
+    border-top-right-radius: 15px;
+}
+
+#booklist-card-contents {
+    background-color: rgb(65, 66, 65);
+    font-size: 0.8em;
+    color: antiquewhite;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding : 0.3em;
+}
+
+.booklist-card-content {
+    width: 50%;
+}
+
+.booklist-card-content-right {
+    text-align: right;
+}
+
+#booklist-card-description {
+    background-color: rgb(197, 199, 197);
+    font-size: 0.7em;
+    text-align: justify;
+    padding : 0.2em 0.3em 1em 0.3em;
+    border-bottom-right-radius: 15px;
+}
+
+#booklist-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1em;
+    gap: 1em;
+}
+
+.booklist-button {
+    position: relative;
+    border-radius: 5px;
+    bottom: 0.6em;
+    padding: 0.1em 1em;
+    transition: 0.5s;
+}
+
+
+#booklist-wish-button {
+    background-color: #95D5B2;
+    border: #95D5B2;
+}
+
+#booklist-wish-button:hover {
+    background-color: rgb(187, 236, 205);
+}
+
+#booklist-booking-button {
+    background-color: #40916C;
+    border: #40916C;
+}
+#booklist-booking-button:hover {
+    background-color: rgb(57, 194, 118);
+}

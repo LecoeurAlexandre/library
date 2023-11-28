@@ -5,6 +5,7 @@ import { BaseScreen } from './screens/BaseScreen';
 import { NewsScreen } from './screens/newsScreen/newsScreen';
 import { LoginScreen } from './screens/loginScreen/LoginScreen';
 import { RegisterScreen } from './screens/registerScreen/RegisterScreen';
+import { BooksListScreen } from './screens/booksListScreen/BooksListScreen';
  
 function App() {
   return ( 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/news" element={<NewsScreen />}/>
           <Route path="/login" element={<LoginScreen />}/>
           <Route path="/register" element={<RegisterScreen />}/>
+          <Route path="/bookslist" element={<BooksListScreen />}/>
         </Route>
       </Routes>
     </BrowserRouter>
