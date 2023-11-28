@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
 import {signIn} from "../../authSlice"
@@ -8,7 +8,6 @@ export function LoginScreen () {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const isLogged = useSelector(state => state.authSlice.isLogged)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 

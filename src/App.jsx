@@ -6,12 +6,16 @@ import { NewsScreen } from './screens/newsScreen/newsScreen';
 import { LoginScreen } from './screens/loginScreen/LoginScreen';
 import { RegisterScreen } from './screens/registerScreen/RegisterScreen';
 import { BooksListScreen } from './screens/booksListScreen/BooksListScreen';
+import { useDispatch } from 'react-redux';
+import { setIsLogged } from './authSlice';
  
 function App() {
 
+  const dispatch = useDispatch()
 
-
-
+  if(localStorage.getItem("token")) {
+    dispatch(setIsLogged(true))
+  }
 
   return ( 
     <BrowserRouter>
