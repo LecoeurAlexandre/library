@@ -20,6 +20,8 @@ export function LoginScreen () {
 
             dispatch(signIn(credentials)).then((data) => {
 
+                console.log(JSON.stringify(data))
+
                 if(data.type == "auth/login/fulfilled") {
                     navigate("/")
                 }

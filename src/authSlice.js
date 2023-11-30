@@ -29,7 +29,7 @@ export const signIn = createAsyncThunk(
 export const signUp = createAsyncThunk(
   "auth/signUp",
   async (credentials) => {
-    const response = await fetch(SIGN_UP_URL, {
+    const response = await fetch("http://localhost:8081/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -38,7 +38,7 @@ export const signUp = createAsyncThunk(
     })
 
     if (!response.ok) {
-      throw new Error("Erreur lors de l'authentification !")
+      throw new Error(`Erreur HTTP! Statut: ${response.status}`)
     }
 
     const data = await response.json()

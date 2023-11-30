@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './RegisterScreen.css'
+import { useDispatch } from 'react-redux'
+import { signUp } from '../../authSlice'
 
 export function RegisterScreen () {
     const [firstname, setFirstname] = useState('')
@@ -9,10 +11,23 @@ export function RegisterScreen () {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const dispatch = useDispatch()
+
     function handleRegistrationForm(e) {
         e.preventDefault();
-        const register = {firstname, lastname, birthdate, email, password}
-        console.log(e)
+        const credentials = {firstname, lastname, birthdate, email, password}
+        const signUpHandler = async(credentials) => {
+            dispatch(signUp(credentials)).then((data) => {
+                console.log(JSON.stringify(data))
+                if(data.type == "auth/signUp/fullfilled") {
+                    Navigate("/")
+                }
+                else if(data.type == "auth/signUp/rejected") {
+                    console.log("ça marche pas")
+                }
+            })
+        }
+        signUpHandler(credentials)
     }
     
 
