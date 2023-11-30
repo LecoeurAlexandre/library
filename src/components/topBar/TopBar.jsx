@@ -24,8 +24,7 @@ export function TopBar() {
                     <ul className="dropdown-menu text-center">
                         <li><a className="dropdown-item text-danger" href="#" onClick={()=>dispatch(removeUser())}>Déconnexion</a></li>
                         <li><hr className="dropdown-divider"/></li>
-                        <li><a className="dropdown-item" href="#">Profil</a></li>
-                        <li><a className="dropdown-item" href="#">Liste de souhait</a></li>
+                        <li><Link to={"/profile"} className="dropdown-item">Profil</Link></li>
                     </ul>
                 </div>
             }
