@@ -16,18 +16,22 @@ export function RegisterScreen () {
     function handleRegistrationForm(e) {
         e.preventDefault();
         const credentials = {firstname, lastname, birthdate, email, password}
-        const signUpHandler = async(credentials) => {
-            dispatch(signUp(credentials)).then((data) => {
-                console.log(JSON.stringify(data))
-                if(data.type == "auth/signUp/fullfilled") {
-                    Navigate("/")
+        const signUpHandler = async (credentials) => {
+            try {
+                const data = await dispatch(signUp(credentials)); // Await the signUp dispatch
+    
+                console.log(JSON.stringify(data));
+    
+                if (data.type === "auth/signUp/fulfilled") {
+                    Navigate("/");
+                } else if (data.type === "auth/signUp/rejected") {
+                    console.log("ça ne fonctionne pas");
                 }
-                else if(data.type == "auth/signUp/rejected") {
-                    console.log("ça marche pas")
-                }
-            })
-        }
-        signUpHandler(credentials)
+            } catch (error) {
+                console.error(error); // Log the error
+            }
+        };
+        signUpHandler(credentials);
     }
     
 
