@@ -7,6 +7,7 @@ import { LoginScreen } from './screens/loginScreen/LoginScreen';
 import { RegisterScreen } from './screens/registerScreen/RegisterScreen';
 import { BooksListScreen } from './screens/booksListScreen/BooksListScreen';
 import { ProfileScreen } from './screens/profileScreen/ProfileScreen';
+import { SearchScreen } from './screens/searchScreen/SearchScreen';
 import { useDispatch } from 'react-redux';
 import { setIsLogged } from './authSlice';
  
@@ -28,6 +29,7 @@ function App() {
           <Route path="/register" element={<RegisterScreen />}/>
           <Route path="/bookslist" element={<BooksListScreen />}/>
           <Route path="/profile" element={<ProfileScreen />}/>
+          <Route path="/search" element={<SearchScreen />}/>
         </Route>
       </Routes>
     </BrowserRouter>

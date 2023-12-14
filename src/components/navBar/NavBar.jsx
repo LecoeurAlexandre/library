@@ -21,7 +21,7 @@ export function NavBar() {
             
             <div id="divNavLeftButtons">
                 <Link className={currentPage === '/' ? 'navActive' : ''} to={"/"}><img src="../public/house.svg" id="navIcon"/></Link>
-                <Link to={"/"}><img src="../public/search.svg" id="navIcon"/></Link>
+                <Link className={currentPage === '/search' ? 'navActive' : ''} to={"/search"}><img src="../public/search.svg" id="navIcon"/></Link>
                 <Link className={currentPage === '/bookslist' ? 'navActive' : ''} to={"/bookslist"}><img src="../public/book.svg" id="navIcon"/></Link>
                 <Link className={currentPage === '/news' ? 'navActive' : ''} to={"/news"}><img src="../public/newspaper.svg" id="navIcon"/></Link>
                 <Link to={"/"}><img src="../public/question-circle.svg" id="navIconHelp"/></Link>

@@ -36,7 +36,7 @@ export function RegisterScreen () {
     
 
     return (
-        <div className='container'>
+        <div className='container' style={{"marginBottom":"120px"}}>
             <br /> <br />
             <div className='row justify-content-center mt-5'>
                 <div className='col-md-11'>
@@ -44,7 +44,7 @@ export function RegisterScreen () {
                         <div className='card-body'>
                             <div className='row'>
                             <div className="col-lg-4">
-                            <img className="img-fluid" src="../public/reader-book.jpg"></img>
+                            <img className="img-fluid mt-5" src="../public/reader-book.jpg"></img>
                         </div>
                         <div className="col-lg-8">
                             <div className='card-header text-center'>

@@ -11,32 +11,31 @@ export function LoginScreen () {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const onSigningHandler = async (credentials) => {
+
+        dispatch(signIn(credentials)).then((data) => {
+
+            console.log(JSON.stringify(data))
+
+            if(data.type == "auth/login/fulfilled") {
+                navigate("/")
+            }
+            else if(data.type == "auth/login/rejected") {
+                document.getElementById("invalidMessage").style.display = "inline"
+            }
+        })
+    }
+
     const handleForm = (e) => {
         e.preventDefault();
 
         var credentials = { email: email, password: password };
 
-        const onSigningHandler = async (credentials) => {
-
-            dispatch(signIn(credentials)).then((data) => {
-
-                console.log(JSON.stringify(data))
-
-                if(data.type == "auth/login/fulfilled") {
-                    navigate("/")
-                }
-                else if(data.type == "auth/login/rejected") {
-                    document.getElementById("invalidMessage").style.display = "inline"
-                }
-            })
-        }
-
         onSigningHandler(credentials)
-
     }
 
     return (
-        <div className='container'>
+        <div className='container' style={{"marginBottom":"210px"}}>
             <br /> <br />
             <div className='row justify-content-center mt-5'>
                 <div className='col-md-8 mt-5'>
@@ -44,7 +43,7 @@ export function LoginScreen () {
                         <div className='card-body'>
                             <div className='row'>
                             <div className="col-lg-4">
-                            <img className="img-fluid" src="../../public/loginImage.jpg"></img>
+                            <img className="img-fluid mt-5" src="../../public/loginImage.jpg"></img>
                         </div>
                         <div className="col-lg-8">
                             <div className='card-header text-center'>

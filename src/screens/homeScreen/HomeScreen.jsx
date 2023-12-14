@@ -13,7 +13,7 @@ export function HomeScreen () {
                         <div className="carousel-inner">
 
                             <div className="carousel-item active">
-                                <img src="./carousel1.jpg" className="d-block w-100"/>
+                                <img src="./libraryInside.jpg" className="d-block w-100"/>
                                 <div className="carousel-caption d-none d-md-block">
                                     <h5 className="fs-4">Rénovation de la salle Émile Zola terminée</h5>
                                 </div>

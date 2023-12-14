@@ -22,7 +22,6 @@
 }
 
 #divCarousel {
-    background-color: green;
     width: 70%;
     overflow: hidden;
 }
@@ -75,7 +74,7 @@
     display: flex;
     flex-direction: column;
     border: 15px solid #40916c;
-    width: 20%;
+    width: 250px;
 } 
 
 #divTriple div {
@@ -141,7 +140,8 @@
 
 #divLatest {
     border: 15px solid #40916c;
-    width: 50%;
+    flex-grow: 1;
+    width: 25%;
 }
 
 

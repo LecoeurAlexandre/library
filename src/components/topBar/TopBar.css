@@ -28,14 +28,19 @@
 }
 
 #topBarLine {
+  flex-grow: 1;
+  margin-right: 250px;
     border: 1px solid black;
     height: 1px;
-    width: 49%;
+    width: 40%;
     -webkit-animation: slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             animation: slide-in-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 #loginButton {
+    position : absolute;
+    right: 105px;
+    top: 20px;
     color: white;
     background-color: #40916C;
     border: 1px solid #40916C;
@@ -66,6 +71,9 @@
 }
 
 #dropdownContainer {
+  position : absolute;
+  right: 125px;
+  top: 15px;
   -webkit-animation: slide-in-right 0.80s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
           animation: slide-in-right 0.80s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
